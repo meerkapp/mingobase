@@ -1,0 +1,46 @@
+{
+  "name": "mingobase",
+  "version": "0.1.0",
+  "description": "Translate MongoDB query syntax to Supabase JS queries",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mingo",
+    "mongodb",
+    "supabase",
+    "query"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "@supabase/supabase-js": "^2.0.0"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  }
+}
